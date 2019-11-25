@@ -1,14 +1,18 @@
 # flutter_bt_printer
 
-A new Flutter plugin.
+精臣蓝牙打印插件
 
-## Getting Started
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+#### 通道
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+flutter_bt_printer
+
+#### 方法
+
+| 方法名 | 含义   | 参数                                                         |
+| ------ | ------ | ------------------------------------------------------------ |
+| init   | 初始化 |                                                              |
+| print  | 打印   | asset_number：资产编号；asset_name：资产名称；asset_model：规格型号 |
+| quit   | 退出   |                                                              |
+
+
