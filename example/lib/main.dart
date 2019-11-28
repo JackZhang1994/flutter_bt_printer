@@ -31,7 +31,16 @@ class _MyAppState extends State<MyApp> {
             ),
             FlatButton(
               onPressed: () {
-                FlutterBtPrinter.print('2188', 'MacBook Air', 'MacBook Pro');
+                FlutterBtPrinter.print(
+                    topTitle: '聚通达资产管理',
+                    bottomTitle: '保护资产是一种美德',
+                    qrCode: '2188',
+                    label1Title: '资产编号',
+                    label1Value: 'MacBook Air',
+                    label2Title: '资产类型',
+                    label2Value: 'MacBook Pro',
+                    label3Title: '品牌型号',
+                    label3Value: 'MacBookPro 2019');
               },
               child: Text('打印'),
             ),
