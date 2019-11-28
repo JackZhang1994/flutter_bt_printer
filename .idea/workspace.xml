@@ -6,7 +6,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6eee3eb5-c6d1-4314-bc74-252c24619d77" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/libs/LPAPI-2019-11-20-R.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/src/main/java/com/jvtd/flutter_bt_printer/utils/LPUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/libs/DzPrinter-2017-06-16.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/jvtd/flutter_bt_printer/FlutterBtPrinterPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/jvtd/flutter_bt_printer/FlutterBtPrinterPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/jvtd/flutter_bt_printer/utils/PrintUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/flutter_bt_printer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_bt_printer.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -26,11 +35,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="8e952d82" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="37" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="38" />
+            <state relative-caret-position="348">
+              <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -41,25 +50,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/flutter_bt_printer.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="79" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="79" />
+            <state relative-caret-position="289">
+              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="306">
-                <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-              </first_editor>
-              <second_editor>
-                <markdownNavigatorState />
-              </second_editor>
             </state>
           </provider>
         </entry>
@@ -75,9 +70,9 @@
         <option value="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/android/src/main/java/com/jvtd/flutter_bt_printer/FlutterBtPrinterPlugin.java" />
         <option value="$PROJECT_DIR$/android/build.gradle" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/lib/flutter_bt_printer.dart" />
         <option value="$PROJECT_DIR$/example/lib/main.dart" />
-        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -94,6 +89,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -104,26 +102,42 @@
             <path>
               <item name="flutter_bt_printer" type="b2602c69:ProjectViewProjectNode" />
               <item name="flutter_bt_printer" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flutter_bt_printer" type="b2602c69:ProjectViewProjectNode" />
               <item name="flutter_bt_printer" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flutter_bt_printer" type="b2602c69:ProjectViewProjectNode" />
               <item name="flutter_bt_printer" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter_bt_printer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter_bt_printer" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter_bt_printer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter_bt_printer" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -164,10 +178,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24969475" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24969475" />
       <window_info id="Captures" order="1" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -177,7 +191,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Dart Analysis" order="0" weight="0.32894737" />
-      <window_info anchor="bottom" id="Run" order="1" weight="0.32894737" />
+      <window_info active="true" anchor="bottom" id="Run" order="1" visible="true" weight="0.32894737" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Logcat" order="4" weight="0.7785088" />
@@ -197,13 +211,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/android/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/flutter/flutter/bin/cache/artifacts/engine/android-arm/flutter.jar!/io/flutter/plugin/common/MethodCall.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -253,35 +260,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="289">
+            <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          </first_editor>
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="37" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/flutter_bt_printer.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="79" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="79" />
+        <state relative-caret-position="289">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="306">
-            <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          </first_editor>
-          <second_editor>
-            <markdownNavigatorState />
-          </second_editor>
+    <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

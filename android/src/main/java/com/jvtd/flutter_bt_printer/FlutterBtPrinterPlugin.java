@@ -1,12 +1,8 @@
 package com.jvtd.flutter_bt_printer;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 
-import com.dothantech.common.DzEnum;
-import com.dothantech.common.DzToast;
-import com.dothantech.printer.IDzPrinter;
-import com.jvtd.flutter_bt_printer.utils.PrintUtil;
+import com.jvtd.flutter_bt_printer.utils.LPUtil;
 
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -42,22 +38,26 @@ public class FlutterBtPrinterPlugin implements MethodCallHandler
     switch (method)
     {
       case "init":
-        // 初始化 IDzPrinter 对象(简单起见，不处理结果通知)
-        PrintUtil.getInstance(context).init();
+        LPUtil.getInstance(context).init();
         result.success("success");
         break;
 
       case "print":
-        String assetNumber = call.argument("asset_number");
-        String assetName = call.argument("asset_name");
-        String assetModel = call.argument("asset_model");
-        PrintUtil.getInstance(context).print(assetNumber, assetName, assetModel);
+        String topTitle = call.argument("top_title");
+        String bottomTitle = call.argument("bottom_title");
+        String qrCode = call.argument("qr_code");
+        String label1Title = call.argument("label1_title");
+        String label1Value = call.argument("label1_value");
+        String label2Title = call.argument("label2_title");
+        String label2Value = call.argument("label2_value");
+        String label3Title = call.argument("label3_title");
+        String label3Value = call.argument("label3_value");
+        LPUtil.getInstance(context).print(topTitle, bottomTitle, qrCode, label1Title, label1Value, label2Title, label2Value, label3Title, label3Value);
         result.success("success");
         break;
 
       case "quit":
-        // 断开蓝牙连接，释放 IDzPrinter 对象
-        PrintUtil.getInstance(context).quit();
+        LPUtil.getInstance(context).quit();
         result.success("success");
         break;
 

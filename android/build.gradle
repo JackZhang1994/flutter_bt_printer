@@ -46,7 +46,7 @@ android {
 
 dependencies {
     // 蓝牙打印机引用的jar
-    implementation files('libs/DzPrinter-2017-06-16.jar')
+    implementation files('libs/LPAPI-2019-11-20-R.jar')
 
     implementation 'androidx.annotation:annotation:1.1.0'
 }
