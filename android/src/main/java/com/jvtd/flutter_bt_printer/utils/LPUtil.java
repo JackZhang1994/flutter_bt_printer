@@ -247,19 +247,20 @@ public class LPUtil
     double lVerLen = 38;// 线纵向长度
     double lWidth = 0.2;// 线宽度
     double cVerLen = 7.6;// 单元格纵向长度
-    double cHorLen = 18;// 单元格横向宽度
+    double cHorLen = 17;// 单元格横向宽度
     double qrCodeHorLen = cVerLen * 3;
+    double startPos = 0.2;
 
     // 开始绘图任务，传入参数(页面宽度, 页面高度)
     api.startJob(lHorLen, lVerLen, 90);
     api.setItemHorizontalAlignment(IAtBitmap.ItemAlignment.CENTER);
     api.setItemVerticalAlignment(IAtBitmap.ItemAlignment.CENTER);
 
-    api.drawRectangle(0, 0, lHorLen, lVerLen, lWidth);
+    api.drawRoundRectangle(startPos, 0, lHorLen, lVerLen, 1, 1, 0.3);
 
     // 画横线
-    api.drawLine(0, cVerLen, lHorLen, cVerLen, lWidth);
-    api.drawLine(0, lVerLen - cVerLen, lHorLen, lVerLen - cVerLen, lWidth);
+    api.drawLine(startPos, cVerLen, lHorLen, cVerLen, lWidth);
+    api.drawLine(startPos, lVerLen - cVerLen, lHorLen, lVerLen - cVerLen, lWidth);
     api.drawLine(qrCodeHorLen, 2 * cVerLen, lHorLen, 2 * cVerLen, lWidth);
     api.drawLine(qrCodeHorLen, 3 * cVerLen, lHorLen, 3 * cVerLen, lWidth);
     // 画竖线
@@ -267,7 +268,7 @@ public class LPUtil
     api.drawLine(qrCodeHorLen + cHorLen, cVerLen, qrCodeHorLen + cHorLen, lVerLen - cVerLen, lWidth);
 
     api.drawText(topTitle, 0, 0, lHorLen, cVerLen, 3.2);
-    api.draw2DQRCode(qrCode, 2, cVerLen + 2, cHorLen);
+    api.draw2DQRCode(qrCode, 2.5, cVerLen + 2.5, 18);
 
     api.drawText(label1Title, qrCodeHorLen, cVerLen, cHorLen, cVerLen, 2.5);
     api.drawText(label1Value, qrCodeHorLen + cHorLen, cVerLen, cHorLen, cVerLen, 2.5);
