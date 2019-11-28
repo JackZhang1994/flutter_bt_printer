@@ -14,7 +14,6 @@
 
 /** 打印机名称*/
 #define  printerName @"B11-81123477"
-#define  printerCount 1
 
 @interface OAPrinterManager()
 
@@ -23,6 +22,7 @@
 @property(nonatomic,copy)OAPrinterFailed  printerFailed;
 @property(nonatomic,strong)OAPrinterConnectSuccess  printerConnectSuccess;
 @property(nonatomic,strong)OAPrinterConnectFailed  printerConnectFailed;
+@property(nonatomic,assign)int  printerCount;
 
 @end
 
@@ -30,6 +30,7 @@
 
 static OAPrinterManager * manager = nil;
 static dispatch_once_t onceToken;
+
 
 + (instancetype)sharedInstance{
     dispatch_once(&onceToken, ^{
@@ -41,14 +42,8 @@ static dispatch_once_t onceToken;
     self = [super init];
     if (self) {
         [LPAPI enableProgress:NO];
-        // 设置打印机纸张类型
-        [LPAPI setPrintPageGapType:2];
-        // 设置打印机打印浓度
-        [LPAPI setPrintDarkness:6];
-        // 设置打印机打印速度
-        [LPAPI setPrintSpeed:3];
-        
         self.printLabelImage = nil;
+        self.printerCount = 1;
     }
     return self;
 }
@@ -57,22 +52,18 @@ static dispatch_once_t onceToken;
     self.printerSuccess = success;
     self.printerFailed = failure;
     
-    if (model.printerCardCount > 0){
+   
         __weak typeof(self) weakSelf = self;
         [self drawCardWithModel:model];
         [LPAPI print:^(BOOL isSuccess){
             if (isSuccess)
             {
                 weakSelf.printerSuccess();
-                model.printerCardCount--;
-                [weakSelf printWithModel:model success:success failure:failure];
             }else{
                 weakSelf.printerFailed();
             }
         }];
-    }else{
-        //        ShowDismissMark(@"打印完成")
-    }
+    
 }
 -(void)drawCardWithModel:(OAAssetManageMentModel *)model{
     CGFloat labelWidth = 57.0f;
@@ -125,59 +116,59 @@ static dispatch_once_t onceToken;
                   height:orignY*3+0.5];
     
     //二维码
-    [LPAPI drawQRCode:model.assetNum
+    [LPAPI drawQRCode:model.qrCode
                     x:2.4
                     y:10
                 width:18];
     //标题
     [LPAPI setItemHorizontalAlignment:1];
-    [LPAPI drawText:@"聚通达资产管理"
+    [LPAPI drawText:model.topTitle
                   x:15
                   y:2
               width:30
              height:5
          fontHeight:3];
     //资产编号
-    [LPAPI drawText:@"资产编号"
+    [LPAPI drawText:model.label1Title
                   x:orignY*3 //((labelWidth-orignY*3)/2-10)/2
                   y:orignY+2.5
               width:(labelWidth-orignY*3)/2
              height:5
          fontHeight:2.5];
-    [LPAPI drawText:model.assetNum
+    [LPAPI drawText:model.label1Value
                   x:orignY*3 + (labelWidth-orignY*3)/2
                   y:orignY+2.5
               width:(labelWidth-orignY*3)/2
              height:5
          fontHeight:2.5];
     //资产名称
-    [LPAPI drawText:@"资产类型"
+    [LPAPI drawText:model.label2Title
                   x:orignY*3
                   y:orignY*2+2.5
               width:(labelWidth-orignY*3)/2
              height:5
          fontHeight:2.5];
-    [LPAPI drawText:model.assetBrand
+    [LPAPI drawText:model.label2Value
                   x:orignY*3 + (labelWidth-orignY*3)/2
                   y:orignY*2+2.5
               width:(labelWidth-orignY*3)/2
              height:5
          fontHeight:2.5];
     //规格型号
-    [LPAPI drawText:@"品牌型号"
+    [LPAPI drawText:model.label3Title
                   x:orignY*3
                   y:orignY*3+2.5
               width:(labelWidth-orignY*3)/2
              height:5
          fontHeight:2.5];
-    [LPAPI drawText:model.assetModel
+    [LPAPI drawText:model.label3Value
                   x:orignY*3+(labelWidth-orignY*3)/2
                   y:orignY*3+2.5
               width:(labelWidth-orignY*3)/2
              height:5
          fontHeight:2.5];
     //提示信息
-    [LPAPI drawText:@"保护资产是一种美德"
+    [LPAPI drawText:model.bottomTitle
                   x:15
                   y:9+9+9+6
               width:30
