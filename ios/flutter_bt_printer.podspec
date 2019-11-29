@@ -14,7 +14,7 @@ A new Flutter plugin.
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
-  s.vendored_libraries = 'Library/Classes/libflutter_bt_printer.a'
+  s.vendored_libraries = 'Frameworks/libLPSDK.a'
   s.dependency 'Flutter'
   s.ios.deployment_target = '8.0'
 end
