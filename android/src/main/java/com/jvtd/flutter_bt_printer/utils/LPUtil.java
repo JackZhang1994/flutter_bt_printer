@@ -31,6 +31,16 @@ public class LPUtil
   private AlertDialog stateAlertDialog = null;
   private LPAPI api;
 
+  private String topTitle;
+  private String bottomTitle;
+  private String qrCode;
+  private String label1Title;
+  private String label1Value;
+  private String label2Title;
+  private String label2Value;
+  private String label3Title;
+  private String label3Value;
+
 
   private LPUtil(Context context)
   {
@@ -125,10 +135,27 @@ public class LPUtil
     }
   };
 
-  public void init()
+  public void init(String topTitle, String bottomTitle, String qrCode, String label1Title, String label1Value, String label2Title, String label2Value, String label3Title, String label3Value)
   {
     // 调用LPAPI对象的init方法初始化对象
     this.api = LPAPI.Factory.createInstance(mCallback);
+
+    this.topTitle = topTitle;
+    this.bottomTitle = bottomTitle;
+    this.qrCode = qrCode;
+    this.label1Title = label1Title;
+    this.label1Value = label1Value;
+    this.label2Title = label2Title;
+    this.label2Value = label2Value;
+    this.label3Title = label3Title;
+    this.label3Value = label3Value;
+
+    IDzPrinter.PrinterState state = api.getPrinterState();
+    if (state != null && state == IDzPrinter.PrinterState.Connecting)
+    {
+      Toast.makeText(mContext, "设备连接中，请稍后再试", Toast.LENGTH_SHORT).show();
+      return;
+    }
 
     SharedPreferences sharedPreferences = mContext.getSharedPreferences("BOP", Context.MODE_PRIVATE);
     String lastPrinterMac = sharedPreferences.getString(KeyLastPrinterMac, null);
@@ -150,14 +177,19 @@ public class LPUtil
       if (api.openPrinterByAddress(mPrinterAddress))
       {
         // 连接打印机的请求提交成功，刷新界面提示
-        onPrinterConnecting(mPrinterAddress, false);
+        onPrinterConnecting(mPrinterAddress, true);
         return;
       }
     }
   }
 
-  public void print(String topTitle, String bottomTitle, String qrCode, String label1Title, String label1Value, String label2Title, String label2Value, String label3Title, String label3Value)
+  public void print()
   {
+    if (api == null)
+    {
+      // 调用LPAPI对象的init方法初始化对象
+      api = LPAPI.Factory.createInstance(mCallback);
+    }
     if (mPrinterAddress == null)
     {
       IDzPrinter.PrinterAddress printerAddress = api.getFirstPrinter();
@@ -171,7 +203,7 @@ public class LPUtil
         if (api.openPrinterByAddress(mPrinterAddress))
         {
           // 连接打印机的请求提交成功，刷新界面提示
-          onPrinterConnecting(mPrinterAddress, false);
+          onPrinterConnecting(mPrinterAddress, true);
           return;
         }
       }
@@ -201,7 +233,7 @@ public class LPUtil
         if (api.openPrinterByAddress(mPrinterAddress))
         {
           // 连接打印机的请求提交成功，刷新界面提示
-          onPrinterConnecting(mPrinterAddress, false);
+          onPrinterConnecting(mPrinterAddress, true);
           return;
         } else
         {
@@ -222,7 +254,10 @@ public class LPUtil
   public void quit()
   {
     // 应用退出时，调用LPAPI对象的quit方法断开打印机连接
-    api.quit();
+    if (api != null)
+    {
+      api.quit();
+    }
 
     // 应用退出时需要的操作
     // 保存相关信息
@@ -306,6 +341,7 @@ public class LPUtil
     clearAlertDialog();
     Toast.makeText(mContext, "连接打印机成功", Toast.LENGTH_SHORT).show();
     mPrinterAddress = printer;
+    print();
   }
 
   // 连接打印机操作提交失败、打印机连接失败或连接断开时操作
@@ -343,13 +379,15 @@ public class LPUtil
   // 显示连接、打印的状态提示框
   private void showStateAlertDialog(String str)
   {
-    if (stateAlertDialog != null && stateAlertDialog.isShowing())
-    {
-      stateAlertDialog.setTitle(str);
-    } else
-    {
-      stateAlertDialog = new AlertDialog.Builder(mContext).setCancelable(false).setTitle(str).show();
-    }
+    Toast.makeText(mContext, str, Toast.LENGTH_SHORT).show();
+
+//    if (stateAlertDialog != null && stateAlertDialog.isShowing())
+//    {
+//      stateAlertDialog.setTitle(str);
+//    } else
+//    {
+//      stateAlertDialog = new AlertDialog.Builder(mContext).setCancelable(false).setTitle(str).show();
+//    }
   }
 
   // 清除连接、打印的状态提示框

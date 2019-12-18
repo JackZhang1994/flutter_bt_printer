@@ -37,11 +37,6 @@ public class FlutterBtPrinterPlugin implements MethodCallHandler
     String method = call.method;
     switch (method)
     {
-      case "init":
-        LPUtil.getInstance(context).init();
-        result.success("success");
-        break;
-
       case "print":
         String topTitle = call.argument("top_title");
         String bottomTitle = call.argument("bottom_title");
@@ -52,7 +47,7 @@ public class FlutterBtPrinterPlugin implements MethodCallHandler
         String label2Value = call.argument("label2_value");
         String label3Title = call.argument("label3_title");
         String label3Value = call.argument("label3_value");
-        LPUtil.getInstance(context).print(topTitle, bottomTitle, qrCode, label1Title, label1Value, label2Title, label2Value, label3Title, label3Value);
+        LPUtil.getInstance(context).init(topTitle, bottomTitle, qrCode, label1Title, label1Value, label2Title, label2Value, label3Title, label3Value);
         result.success("success");
         break;
 

@@ -42,11 +42,15 @@ android {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
     }
+
+    packagingOptions {
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+    }
 }
 
 dependencies {
     // 蓝牙打印机引用的jar
     implementation files('libs/LPAPI-2019-11-20-R.jar')
 
-    implementation 'androidx.annotation:annotation:1.1.0'
+//    implementation 'androidx.annotation:annotation:1.1.0'
 }
