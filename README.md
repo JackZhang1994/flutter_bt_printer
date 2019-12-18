@@ -11,8 +11,7 @@ flutter_bt_printer
 
 | 方法名 | 含义   | 参数                                                         |
 | ------ | ------ | ------------------------------------------------------------ |
-| init   | 初始化 |                                                              |
-| print  | 打印   | asset_number：资产编号；asset_name：资产名称；asset_model：规格型号 |
+| print  | 打印   | topTitle：顶部标题；bottomTitle：底部标题；qrCode：二维码值；label1Title：内容第一列标题；label1Value：内容第一列值；label2Title：内容第二列标题；label2Value：内容第二列值；label3Title：内容第三列标题；label3Value：内容第三列值 |
 | quit   | 退出   |                                                              |
 
 

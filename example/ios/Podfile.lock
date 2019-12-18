@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - flutter_bt_printer (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `.symlinks/flutter/ios`)
+  - flutter_bt_printer (from `.symlinks/plugins/flutter_bt_printer/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: ".symlinks/flutter/ios"
+  flutter_bt_printer:
+    :path: ".symlinks/plugins/flutter_bt_printer/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_bt_printer: f5a9a4f25a7001b214b5873944bb3003ecaa08ce
+
+PODFILE CHECKSUM: 64b2109b760ac9073c864e2a8278e6464efaa219
+
+COCOAPODS: 1.8.4

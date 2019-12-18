@@ -5,10 +5,6 @@ import 'package:flutter/services.dart';
 class FlutterBtPrinter {
   static const MethodChannel _channel = const MethodChannel('flutter_bt_printer');
 
-  static Future init() async {
-    return await _channel.invokeMethod('init');
-  }
-
   static Future print(
       {String topTitle,
       String bottomTitle,

@@ -12,11 +12,7 @@
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
   
-    if ([@"init" isEqualToString:call.method]) {
-    //初始化
-    OAPrinterManager *printManager =  [OAPrinterManager sharedInstance];
-      
-  }else if ([@"print" isEqualToString:call.method]){
+   if ([@"print" isEqualToString:call.method]){
       NSDictionary *argumentDic = call.arguments;
       NSString *topTitle = argumentDic[@"top_title"];
       NSString *bottomTitle = argumentDic[@"bottom_title"];

@@ -1,3 +1,3 @@
-## 0.0.1
+## 0.0.2
 
-* TODO: Describe initial release.
+方法修改，只保留print和quit
