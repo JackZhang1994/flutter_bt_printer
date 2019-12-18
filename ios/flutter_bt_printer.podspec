@@ -13,9 +13,9 @@ A new Flutter plugin.
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
-  s.public_header_files = 'Classes/**/*.h'
+  # include project .a
+  s.vendored_libraries = '**/*.a'
   s.dependency 'Flutter'
-
   s.ios.deployment_target = '8.0'
 end
 
