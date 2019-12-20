@@ -23,12 +23,12 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: <Widget>[
-            FlatButton(
-              onPressed: () {
-                FlutterBtPrinter.init();
-              },
-              child: Text('初始化'),
-            ),
+//            FlatButton(
+//              onPressed: () {
+//                FlutterBtPrinter.init();
+//              },
+//              child: Text('初始化'),
+//            ),
             FlatButton(
               onPressed: () {
                 FlutterBtPrinter.print(
