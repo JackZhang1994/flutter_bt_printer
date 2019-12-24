@@ -1,5 +1,6 @@
 #import "FlutterBtPrinterPlugin.h"
 #import "OAPrinterManager.h"
+#import "DzBluetoothManager.h"
 
 @implementation FlutterBtPrinterPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
@@ -13,6 +14,18 @@
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
   
    if ([@"print" isEqualToString:call.method]){
+       [DzBluetoothManager didDiscoveredPeripheralHandler:^(CBPeripheral *peripheral, NSString *realName, NSNumber *RSSI)
+        {
+        }];
+       [DzBluetoothManager didChangeBLEStateHandler:^(NSInteger state)
+        {
+            if (state == CBCentralManagerStatePoweredOn)
+            {
+                [DzBluetoothManager startScanPeripherals];
+            }
+        }];
+       [DzBluetoothManager initBLE];
+       
       NSDictionary *argumentDic = call.arguments;
       NSString *topTitle = argumentDic[@"top_title"];
       NSString *bottomTitle = argumentDic[@"bottom_title"];
